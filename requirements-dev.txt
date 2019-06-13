@@ -1,9 +1,9 @@
-wagtail>=2.0
-Django>=2.0
+# wagtail<2.5.1,>=2.0
+# Django<2.3,>=2.0
 
 # For translations
-polib
-transifex-client
+# polib
+# transifex-client
 
 # release
-zest.releaser[recommended]
+# zest.releaser[recommended]

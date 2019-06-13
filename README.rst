@@ -10,6 +10,7 @@ As of Wagtail 1.5 this integrates using Wagtail's alternative rich text editor f
 
 Installation
 ============
+Use with ``django v2`` and ``wagtail v2``.
 
 Add ``wagtailtinymce`` to your |INSTALLED_APPS Django setting|_.
 
@@ -135,3 +136,7 @@ Versioning
 ==========
 The version number of this package is the TinyMCE version, followed by
 the release number of this package for that TinyMCE version.
+
+Forked from
+===========
+`isotoma/wagtailtinymce <https://github.com/isotoma/wagtailtinymce>`_

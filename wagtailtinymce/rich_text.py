@@ -78,7 +78,7 @@ class TinyMCERichTextArea(WidgetWithScript, widgets.Textarea):
     def get_panel(self):
         return RichTextFieldPanel
 
-    def render(self, name, value, attrs=None):
+    def render(self, name, value, attrs=None, renderer=None):
         if value is None:
             translated_value = None
         else:

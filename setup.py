@@ -50,7 +50,7 @@ setup(
     description='A TinyMCE editor integration for Wagtail',
     author='Richard Mitchell',
     author_email='richard.mitchell@isotoma.com',
-    url='https://github.com/isotoma/wagtailtinymce.git',
+    url='https://github.com/m-pasha/wagtailtinymce.git',
     packages=find_packages(),
     include_package_data=True,
     license='New BSD',

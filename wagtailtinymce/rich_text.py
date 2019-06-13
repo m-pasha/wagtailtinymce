@@ -83,7 +83,7 @@ class TinyMCERichTextArea(WidgetWithScript, widgets.Textarea):
             translated_value = None
         else:
             translated_value = self.converter.from_database_format(value)
-        return super(TinyMCERichTextArea, self).render(name, translated_value, attrs)
+        return super(TinyMCERichTextArea, self).render(name, translated_value, attrs, renderer)
 
     def render_js_init(self, id_, name, value):
         kwargs = {

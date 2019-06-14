@@ -80,11 +80,6 @@ class TinyMCERichTextArea(WidgetWithScript, widgets.Textarea):
     def get_panel(self):
         return RichTextFieldPanel
 
-    def _render(self, template_name, context, renderer=None):
-        if renderer is None:
-            renderer = get_default_renderer()
-        return mark_safe(renderer.render(template_name, context))
-
     def render(self, name, value, attrs=None, renderer=None):
         if value is None:
             translated_value = None
@@ -92,7 +87,7 @@ class TinyMCERichTextArea(WidgetWithScript, widgets.Textarea):
             translated_value = self.converter.from_database_format(value)
         if renderer is None:
             renderer = get_default_renderer()
-        return super(TinyMCERichTextArea, self)._render(name, translated_value, attrs, renderer)
+        return super(TinyMCERichTextArea, self).render(name, translated_value, attrs, renderer)
 
     def render_js_init(self, id_, name, value):
         kwargs = {

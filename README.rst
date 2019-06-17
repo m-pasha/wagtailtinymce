@@ -132,6 +132,31 @@ A complete ``wagtail_hooks.py`` file example:
             to_js_primitive(translation.to_locale(translation.get_language())),
         )
 
+Settings
+========
+.. code-block:: python
+WAGTAIL_CKEDITOR_CONFIG = {
+            'buttons': [
+                [
+                    ['undo', 'redo'],
+                    ['styleselect'],
+                    ['bold', 'italic'],
+                    ['bullist', 'numlist', 'outdent', 'indent'],
+                    ['table'],
+                    ['link', 'unlink'],
+                    ['wagtaildoclink', 'wagtailimage', 'wagtailembed'],
+                    ['pastetext', 'fullscreen'],
+                ]
+            ],
+            'menus': False,
+            'options': {
+                'browser_spellcheck': True,
+                'noneditable_leave_contenteditable': True,
+                'language': translation.to_locale(translation.get_language()),
+                'language_load': True,
+            },
+        }
+
 Versioning
 ==========
 The version number of this package is the TinyMCE version, followed by

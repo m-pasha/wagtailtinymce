@@ -28,8 +28,8 @@ from __future__ import absolute_import, unicode_literals
 import json
 
 from django.forms import widgets
+from django.conf import settings
 from django.utils import translation
-from django.utils.safestring import mark_safe
 from django.forms.renderers import get_default_renderer
 from wagtail.utils.widgets import WidgetWithScript
 
@@ -42,7 +42,7 @@ class TinyMCERichTextArea(WidgetWithScript, widgets.Textarea):
 
     @classmethod
     def getDefaultArgs(cls):
-        return {
+        return getattr(settings, 'WAGTAIL_CKEDITOR_CONFIG', {
             'buttons': [
                 [
                     ['undo', 'redo'],
@@ -62,7 +62,7 @@ class TinyMCERichTextArea(WidgetWithScript, widgets.Textarea):
                 'language': translation.to_locale(translation.get_language()),
                 'language_load': True,
             },
-        }
+        })
 
     def __init__(self, attrs=None, **kwargs):
         super(TinyMCERichTextArea, self).__init__(attrs)

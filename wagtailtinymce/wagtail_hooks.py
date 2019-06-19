@@ -45,7 +45,20 @@ def to_js_primitive(string):
 @hooks.register('insert_editor_css')
 def insert_editor_css():
     css_files = [
-        'wagtailtinymce/css/icons.css'
+        'wagtailtinymce/css/icons.css',
+        'wagtailtinymce/js/skins/content/default/content.css',
+        'wagtailtinymce/js/skins/content/document/content.css',
+        'wagtailtinymce/js/skins/content/writer/content.css',
+        'wagtailtinymce/js/skins/ui/oxide/content.css',
+        'wagtailtinymce/js/skins/ui/oxide/content.inline.css',
+        'wagtailtinymce/js/skins/ui/oxide/content.mobile.css',
+        'wagtailtinymce/js/skins/ui/oxide/skin.css',
+        'wagtailtinymce/js/skins/ui/oxide/skin.mobile.css',
+        'wagtailtinymce/js/skins/ui/oxide-dark/content.css',
+        'wagtailtinymce/js/skins/ui/oxide-dark/content.inline.css',
+        'wagtailtinymce/js/skins/ui/oxide-dark/content.mobile.css',
+        'wagtailtinymce/js/skins/ui/oxide-dark/skin.css',
+        'wagtailtinymce/js/skins/ui/oxide-dark/skin.mobile.css'
     ]
     css_includes = format_html_join(
         '\n',
@@ -80,19 +93,19 @@ def insert_editor_js():
     return preload + js_includes + hook_output('insert_tinymce_js')
 
 
-@hooks.register('insert_tinymce_js')
-def images_richtexteditor_js():
-    return format_html(
-        """
-        <script>
-            registerMCEPlugin("wagtailimage", {}, {});
-            window.chooserUrls.imageChooserSelectFormat = {};
-        </script>
-        """,
-        to_js_primitive(static('wagtailtinymce/js/plugins/image/plugin.js')),
-        to_js_primitive(translation.to_locale(translation.get_language())),
-        to_js_primitive(reverse('wagtailimages:chooser_select_format', args=['00000000']))
-    )
+# @hooks.register('insert_tinymce_js')
+# def images_richtexteditor_js():
+#     return format_html(
+#         """
+#         <script>
+#             registerMCEPlugin("wagtailimage", {}, {});
+#             window.chooserUrls.imageChooserSelectFormat = {};
+#         </script>
+#         """,
+#         to_js_primitive(static('wagtailtinymce/js/plugins/image/plugin.js')),
+#         to_js_primitive(translation.to_locale(translation.get_language())),
+#         to_js_primitive(reverse('wagtailimages:chooser_select_format', args=['00000000']))
+#     )
 
 
 # @hooks.register('insert_tinymce_js')

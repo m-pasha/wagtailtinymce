@@ -49,16 +49,6 @@ def insert_editor_css():
         'wagtailtinymce/js/skins/content/default/content.css',
         'wagtailtinymce/js/skins/content/document/content.css',
         'wagtailtinymce/js/skins/content/writer/content.css',
-        'wagtailtinymce/js/skins/ui/oxide/content.css',
-        'wagtailtinymce/js/skins/ui/oxide/content.inline.css',
-        'wagtailtinymce/js/skins/ui/oxide/content.mobile.css',
-        'wagtailtinymce/js/skins/ui/oxide/skin.css',
-        'wagtailtinymce/js/skins/ui/oxide/skin.mobile.css',
-        'wagtailtinymce/js/skins/ui/oxide-dark/content.css',
-        'wagtailtinymce/js/skins/ui/oxide-dark/content.inline.css',
-        'wagtailtinymce/js/skins/ui/oxide-dark/content.mobile.css',
-        'wagtailtinymce/js/skins/ui/oxide-dark/skin.css',
-        'wagtailtinymce/js/skins/ui/oxide-dark/skin.mobile.css'
     ]
     css_includes = format_html_join(
         '\n',

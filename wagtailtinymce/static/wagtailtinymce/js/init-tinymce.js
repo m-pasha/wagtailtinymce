@@ -5,5 +5,5 @@ tinymce.init({
 
     branding: false,
 
-    theme: 'mobile',
+    theme: 'silver',
 });

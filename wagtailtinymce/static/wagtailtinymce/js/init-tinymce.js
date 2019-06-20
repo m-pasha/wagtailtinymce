@@ -7,12 +7,12 @@ tinymce.init({
     menubar: false,
     resize: 'both',
 
-    plugins : 'advlist autolink link image lists charmap table hr code fullscreen',
+    plugins : 'lists charmap table hr code fullscreen wagtaillink wagtaildoclink wagtailimage wagtailembeds',
 
     toolbar: 'undo redo | styleselect | h2 h3 h4 h5 | bold italic strikethrough blockquote hr |' +
         'forecolor backcolor | bullist numlist aligncenter | table | charmap |' +
-        'link image |' +
-        'code | fullscreen advlist autolink lists',
+        'wagtaillink wagtaildoclink wagtailimage wagtailembeds |' +
+        'code | fullscreen',
 
 
     // TABLE

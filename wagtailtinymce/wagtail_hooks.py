@@ -58,7 +58,7 @@ def insert_editor_css():
 def insert_editor_js():
     js_files = [
         'wagtailtinymce/js/tinymce.min.js',
-        'wagtailtinymce/js/init-tinymce.js',
+        # 'wagtailtinymce/js/init-tinymce.js',   # will add in project hooks
     ]
     js_includes = format_html_join(
         '\n',
@@ -69,55 +69,55 @@ def insert_editor_js():
     return js_includes + hook_output('insert_tinymce_js')
 
 
-@hooks.register('insert_tinymce_js')
-def images_richtexteditor_js():
-    return format_html(
-        """
-        <script>
-            registerMCEPlugin("wagtailimage", {}, {});
-            window.chooserUrls.imageChooserSelectFormat = {};
-        </script>
-        """,
-        to_js_primitive(static('wagtailtinymce/js/tinymce-plugins/wagtailimage.js')),
-        to_js_primitive(translation.to_locale(translation.get_language())),
-        to_js_primitive(reverse('wagtailimages:chooser_select_format', args=['00000000']))
-    )
-
-
-@hooks.register('insert_tinymce_js')
-def embeds_richtexteditor_js():
-    return format_html(
-        """
-        <script>
-            registerMCEPlugin("wagtailembeds", {}, {});
-        </script>
-        """,
-        to_js_primitive(static('wagtailtinymce/js/tinymce-plugins/wagtailembeds.js')),
-        to_js_primitive(translation.to_locale(translation.get_language())),
-    )
-
-
-@hooks.register('insert_tinymce_js')
-def links_richtexteditor_js():
-    return format_html(
-        """
-        <script>
-            registerMCEPlugin("wagtaillink", {}, {});
-        </script>
-        """,
-        to_js_primitive(static('wagtailtinymce/js/tinymce-plugins/wagtaillink.js')),
-        to_js_primitive(translation.to_locale(translation.get_language())),
-    )
-
-
-@hooks.register('insert_tinymce_js')
-def docs_richtexteditor_js():
-    return format_html(
-        """
-        <script>
-            registerMCEPlugin("wagtaildoclink", {}, {});
-        </script>
-        """,
-        to_js_primitive(static('wagtailtinymce/js/tinymce-plugins/wagtaildoclink.js')),
-        to_js_primitive(translation.to_locale(translation.get_language())),
-    )
+# @hooks.register('insert_tinymce_js')
+# def images_richtexteditor_js():
+#     return format_html(
+#         """
+#         <script>
+#             registerMCEPlugin("wagtailimage", {}, {});
+#             window.chooserUrls.imageChooserSelectFormat = {};
+#         </script>
+#         """,
+#         to_js_primitive(static('wagtailtinymce/js/tinymce-plugins/wagtailimage.js')),
+#         to_js_primitive(translation.to_locale(translation.get_language())),
+#         to_js_primitive(reverse('wagtailimages:chooser_select_format', args=['00000000']))
+#     )
+#
+#
+# @hooks.register('insert_tinymce_js')
+# def embeds_richtexteditor_js():
+#     return format_html(
+#         """
+#         <script>
+#             registerMCEPlugin("wagtailembeds", {}, {});
+#         </script>
+#         """,
+#         to_js_primitive(static('wagtailtinymce/js/tinymce-plugins/wagtailembeds.js')),
+#         to_js_primitive(translation.to_locale(translation.get_language())),
+#     )
+#
+#
+# @hooks.register('insert_tinymce_js')
+# def links_richtexteditor_js():
+#     return format_html(
+#         """
+#         <script>
+#             registerMCEPlugin("wagtaillink", {}, {});
+#         </script>
+#         """,
+#         to_js_primitive(static('wagtailtinymce/js/tinymce-plugins/wagtaillink.js')),
+#         to_js_primitive(translation.to_locale(translation.get_language())),
+#     )
+#
+#
+# @hooks.register('insert_tinymce_js')
+# def docs_richtexteditor_js():
+#     return format_html(
+#         """
+#         <script>
+#             registerMCEPlugin("wagtaildoclink", {}, {});
+#         </script>
+#         """,
+#         to_js_primitive(static('wagtailtinymce/js/tinymce-plugins/wagtaildoclink.js')),
+#         to_js_primitive(translation.to_locale(translation.get_language())),
+#     )
